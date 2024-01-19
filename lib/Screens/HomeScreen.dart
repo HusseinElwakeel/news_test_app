@@ -57,9 +57,7 @@ class HomeScreen extends StatelessWidget {
               height: 10,
             ),
           ),
-          SliverToBoxAdapter(
-            child: NewsListView(),
-          ),
+          NewsListView(),
         ],
       ),
 
