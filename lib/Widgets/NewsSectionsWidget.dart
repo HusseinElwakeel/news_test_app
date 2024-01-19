@@ -16,8 +16,7 @@ class NewsSectionsWidget extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-                image: AssetImage(NewsSection.Image),
-                fit: BoxFit.fill)),
+                image: AssetImage(NewsSection.Image), fit: BoxFit.fill)),
         child: Center(
           child: Text(
             NewsSection.NewsName,

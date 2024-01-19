@@ -4,7 +4,6 @@ import 'package:news_test_app/constant/NewsSectionConstant.dart';
 
 class NewsSectionListViewWidget extends StatelessWidget {
   const NewsSectionListViewWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

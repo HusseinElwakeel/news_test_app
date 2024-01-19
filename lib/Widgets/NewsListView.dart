@@ -6,12 +6,11 @@ class NewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        physics: BouncingScrollPhysics(),
-        itemBuilder: (context, index) => NewsWidget(),
-        itemCount: 10,
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) => NewsWidget(),
+      itemCount: 10,
     );
   }
 }
