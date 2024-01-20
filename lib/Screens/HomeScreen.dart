@@ -30,22 +30,6 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
-      // appBar: AppBar(title: Center(
-      //   child: RichText(text: TextSpan(children: [
-      //     TextSpan(text: "News",
-      //     style: TextStyle(
-      //       color: Colors.yellowAccent,
-      //       fontSize: 25,
-      //     ),
-      //     ),
-      //     TextSpan(
-      //       text: "App",
-      //       style: TextStyle(
-      //         fontSize: 30
-      //       ),
-      //     )
-      //   ]),),
-      // )),
       body: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
@@ -61,55 +45,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
 
-      // Padding(
-      //   padding: const EdgeInsets.symmetric(
-      //     horizontal: 15,
-      //   ),
-      //   child: Column(
-      //     children: [
-      //       NewsSectionListViewWidget(),
-      //       SizedBox(
-      //         height: 15,
-      //       ),
-      //       NewsListView(),
-      //     ],
-      //   ),
-      // )
 
-      //NewsSectionListViewWidget(),
-
-      // CustomScrollView(
-      //   physics: NeverScrollableScrollPhysics(),
-      //   shrinkWrap: false,
-      //   slivers: [
-      //     // SliverToBoxAdapter(
-      //     //   child: SizedBox(
-      //     //     height: 100.0,
-      //     //     child: ListView.builder(
-      //     //       scrollDirection: Axis.horizontal,
-      //     //       itemCount: 100,
-      //     //       itemBuilder: (context, index) {
-      //     //         return SizedBox(
-      //     //           width: 100.0,
-      //     //           child: Card(
-      //     //             color: Colors.cyan[100 * (index % 9)],
-      //     //             child: Text('Item $index'),
-      //     //           ),
-      //     //         );
-      //     //       },
-      //     //     ),
-      //     //   ),
-      //     // ),
-      //     SliverList(
-      //
-      //       delegate: SliverChildBuilderDelegate(
-      //             (context, index) => Image(image: AssetImage(photos[index])),
-      //         childCount: photos.length,
-      //       ),
-      //     ),
-      //
-      //   ],
-      // ),
     );
   }
 }
