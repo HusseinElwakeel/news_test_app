@@ -4,15 +4,22 @@ import 'package:news_test_app/screens/HomeScreen.dart';
 
 void main() {
   runApp(const MyApp());
-  getHttp();
-
+  print("Hussein Elwakeel");
+  Future.delayed(
+    Duration(seconds: 2),
+    () => print("Hussein"),
+  );
+  getOrderName();
 }
-
-final dio = Dio();
-void getHttp() async {
-  final response = await dio.get(
-      'https://newsapi.org/v2/top-headlines?apiKey=788c7ef99218431a9bb511b97cc976aa&country=eg&category=sports');
-  print(response);
+dynamic getOrderName (){
+  var orderName = order();
+  print("the order is $orderName");
+}
+dynamic order(){
+  Future.delayed(
+    Duration(seconds: 2),
+    () => print("coffe"),
+  );
 }
 
 class MyApp extends StatelessWidget {
