@@ -1,22 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:news_test_app/Services/NewsServices.dart';
 import 'package:news_test_app/screens/HomeScreen.dart';
 
 void main() async {
   runApp(const MyApp());
-  print(await getOrderName());
-}
+  NewsServices(dio: Dio()).getGeneralNews();
 
-Future<String> getOrderName() async {
-  var orderName = await order();
-  return "the order is $orderName";
-}
-
-Future<String> order() {
-  return Future.delayed(
-    Duration(seconds: 2),
-    () => "Coffee",
-  );
 }
 
 class MyApp extends StatelessWidget {

@@ -17,5 +17,13 @@ class NewsServices {
 
     //Map<String,dynamic> jsonData = response.data;
     var jsonData = response.data;
+    print(jsonData["totalResults"]);
+    List<dynamic> articles =jsonData["articles"];
+    print(articles);
+
+    for (var article in articles){
+      print(article["author"]);
+      print(article["title"]);
+    }
   }
 }
