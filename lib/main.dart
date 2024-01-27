@@ -9,7 +9,7 @@ void main() async {
     Duration(seconds: 2),
     () => print("Hussein"),
   );
-  await getOrderName();
+  print(await getOrderName());
   Future.delayed(
     Duration(seconds: 1),
     () => print("Hello Hussein"),
@@ -17,12 +17,12 @@ void main() async {
   print("Helooooooooooo ");
 }
 
-dynamic getOrderName() async {
+Future<String> getOrderName() async {
   var orderName = await order();
-  print("the order is $orderName");
+  return "the order is $orderName";
 }
 
-dynamic order() {
+Future<String> order() {
   return Future.delayed(
     Duration(seconds: 2),
     () => "Coffee",
