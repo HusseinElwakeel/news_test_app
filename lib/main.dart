@@ -2,23 +2,30 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_test_app/screens/HomeScreen.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
   print("Hussein Elwakeel");
   Future.delayed(
     Duration(seconds: 2),
     () => print("Hussein"),
   );
-  getOrderName();
+  await getOrderName();
+  Future.delayed(
+    Duration(seconds: 1),
+    () => print("Hello Hussein"),
+  );
+  print("Helooooooooooo ");
 }
-dynamic getOrderName (){
-  var orderName = order();
+
+dynamic getOrderName() async {
+  var orderName = await order();
   print("the order is $orderName");
 }
-dynamic order(){
-  Future.delayed(
+
+dynamic order() {
+  return Future.delayed(
     Duration(seconds: 2),
-    () => print("coffe"),
+    () => "Coffee",
   );
 }
 
