@@ -4,17 +4,7 @@ import 'package:news_test_app/screens/HomeScreen.dart';
 
 void main() async {
   runApp(const MyApp());
-  print("Hussein Elwakeel");
-  Future.delayed(
-    Duration(seconds: 2),
-    () => print("Hussein"),
-  );
   print(await getOrderName());
-  Future.delayed(
-    Duration(seconds: 1),
-    () => print("Hello Hussein"),
-  );
-  print("Helooooooooooo ");
 }
 
 Future<String> getOrderName() async {
