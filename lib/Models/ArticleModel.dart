@@ -2,7 +2,7 @@ class ArticleModel {
   final String? Image;
   final String? Title;
   final String? Description;
-  final Source source;
+  //final Source source;
 
   const ArticleModel(
       {required this.Image,
