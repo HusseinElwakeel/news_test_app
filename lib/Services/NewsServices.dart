@@ -7,24 +7,18 @@ class NewsServices {
 //as dio package
   void getSportsNews() async {
     final response = await dio.get(
-        'https://newsapi.org/v2/top-headlines?apiKey=788c7ef99218431a9bb511b97cc976aa&country=eg&category=sports');
+        'https://newsapi.org/v2/top-headlines?apiKey=788c7ef99218431a9bb511b97cc976aa&country=us&category=sports');
     print(response);
   }
 
 //i make it
-  getGeneralNews() async {
+  Future<List<ArticleModel>> getGeneralNews() async {
     Response response = await dio.get(
-        "https://newsapi.org/v2/top-headlines?apiKey=788c7ef99218431a9bb511b97cc976aa&country=eg&category=general");
+        "https://newsapi.org/v2/top-headlines?apiKey=788c7ef99218431a9bb511b97cc976aa&country=us&category=general");
 
-    //Map<String,dynamic> jsonData = response.data;
     var jsonData = response.data;
     print(jsonData["totalResults"]);
     List<dynamic> articles = jsonData["articles"];
-    // print(articles);
-    // for (var article in articles){
-    //   print(article["author"]);
-    //   print(article["title"]);
-    // }
 
     List<ArticleModel> articleList = [];
     for (var art in articles) {
@@ -32,9 +26,11 @@ class NewsServices {
           Image: art["urlToImage"],
           Title: art["title"],
           Description: art["description"],
-          source: Source(id: art["source"]["id"], name: art["source"]["name"]));
+          //source: Source(id: art["source"]["id"], name: art["source"]["name"])
+      );
       articleList.add(articleData);
     }
-    print(articleList);
+    return articleList;
   }
+
 }
