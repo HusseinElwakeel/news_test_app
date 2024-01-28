@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:news_test_app/Models/ArticleModel.dart';
 
 class NewsServices {
   NewsServices({required this.dio});
@@ -21,9 +22,19 @@ class NewsServices {
     List<dynamic> articles =jsonData["articles"];
     print(articles);
 
+
     for (var article in articles){
       print(article["author"]);
       print(article["title"]);
     }
+
+    // List<dynamic> articleContent =[];
+    // for(var art in articles){
+    //   List<ArticleModel> arts =[
+    //     ArticleModel(Image: art["urlToImage"], Title: art["title"], Description: art["description"]),
+    //   ];
+    //   print(arts);
+    // }
+    // articleContent.add(arts);
   }
 }
