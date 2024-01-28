@@ -19,22 +19,21 @@ class NewsServices {
     //Map<String,dynamic> jsonData = response.data;
     var jsonData = response.data;
     print(jsonData["totalResults"]);
-    List<dynamic> articles =jsonData["articles"];
-    print(articles);
-
-
-    for (var article in articles){
-      print(article["author"]);
-      print(article["title"]);
-    }
-
-    // List<dynamic> articleContent =[];
-    // for(var art in articles){
-    //   List<ArticleModel> arts =[
-    //     ArticleModel(Image: art["urlToImage"], Title: art["title"], Description: art["description"]),
-    //   ];
-    //   print(arts);
+    List<dynamic> articles = jsonData["articles"];
+    // print(articles);
+    // for (var article in articles){
+    //   print(article["author"]);
+    //   print(article["title"]);
     // }
-    // articleContent.add(arts);
+
+    List<ArticleModel> articleList = [];
+    for (var arts in articles) {
+      ArticleModel articleData = ArticleModel(
+          Image: arts["urlToImage"],
+          Title: arts["title"],
+          Description: arts["description"]);
+      articleList.add(articleData);
+    }
+    print(articleList);
   }
 }
