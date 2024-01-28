@@ -9,7 +9,8 @@ class NewsListView extends StatelessWidget {
 
   @override
   Future<Widget> build(BuildContext context) async{
-    List<ArticleModel>article = await NewsServices(dio: Dio()).getGeneralNews();
+    List<ArticleModel> article = await NewsServices(dio: Dio()).getGeneralNews();
+
     return SliverList(
         delegate: SliverChildBuilderDelegate(
             childCount: 13, (context, index) => NewsWidget()));
