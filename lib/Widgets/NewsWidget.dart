@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_test_app/Models/ArticleModel.dart';
 
 class NewsWidget extends StatelessWidget {
-  const NewsWidget({super.key});
+  const NewsWidget({super.key,required this.article});
+   final ArticleModel article;
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +14,16 @@ class NewsWidget extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Image(
-              image: NetworkImage(
-                  "https://th.bing.com/th/id/R.93eab1c0681ad5fb790ab649ecc3f349?rik=pqYMSVp2phqbcg&pid=ImgRaw&r=0"),
+              image:NetworkImage(
+                // ?? if null do ......
+                article.Image??"https://hellofaread.com/wp-content/uploads/2019/10/Latest-News-1.jpg"
+                 ),
               height: 250,
               width: double.infinity,
               fit: BoxFit.fill,
             ),
           ),
-          Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          Text(article.Title??"News...",
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
             style: TextStyle(
@@ -30,7 +33,7 @@ class NewsWidget extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+           article.Description??"News........................",
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
