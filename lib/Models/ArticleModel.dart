@@ -4,12 +4,12 @@ class ArticleModel {
   final String? Description;
   //final Source source;
 
-  const ArticleModel(
-      {required this.Image,
-      required this.Title,
-      required this.Description,
-      //required this.source
-      });
+  const ArticleModel({
+    required this.Image,
+    required this.Title,
+    required this.Description,
+    //required this.source
+  });
 }
 
 // class Source {

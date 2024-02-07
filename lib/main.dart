@@ -6,7 +6,6 @@ import 'package:news_test_app/screens/HomeScreen.dart';
 void main() async {
   runApp(const MyApp());
   NewsServices(dio: Dio()).getGeneralNews();
-
 }
 
 class MyApp extends StatelessWidget {

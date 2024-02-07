@@ -10,22 +10,25 @@ class NewsListView extends StatefulWidget {
   @override
   State<NewsListView> createState() => _NewsListViewState();
 }
+
 // Scope contain initial State and build ui
 class _NewsListViewState extends State<NewsListView> {
   List<ArticleModel> articles = [];
   @override
   //first state and call once only
   //initState dont allow to put async
-  void initState()  {
+  void initState() {
     // TODO: implement initState
     super.initState();
     //to call the method once
-     getGeneralNewS(); //delete await because it dont do any thing after it
+    getGeneralNewS(); //delete await because it dont do any thing after it
   }
+
   // do only ctrl + alt + M to refactor method
   Future<void> getGeneralNewS() async {
     articles = await NewsServices(dio: Dio()).getGeneralNews();
   }
+
 //second build UI
   Widget build(BuildContext context) {
     return SliverList(
