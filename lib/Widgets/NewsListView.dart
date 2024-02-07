@@ -22,7 +22,7 @@ class _NewsListViewState extends State<NewsListView> {
     //to call the method once
      getGeneralNewS(); //delete await because it dont do any thing after it
   }
-  // do only alt + shift + M to refactor method
+  // do only ctrl + alt + M to refactor method
   Future<void> getGeneralNewS() async {
     articles = await NewsServices(dio: Dio()).getGeneralNews();
   }
