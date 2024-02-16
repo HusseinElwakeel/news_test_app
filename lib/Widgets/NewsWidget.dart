@@ -17,7 +17,7 @@ class NewsWidget extends StatelessWidget {
               image: NetworkImage(
                   // ?? if null do ......
                   article.Image ??
-                      "https://hellofaread.com/wp-content/uploads/2019/10/Latest-News-1.jpg"),
+                      "https://th.bing.com/th/id/OIP.QO-vcwJ85a9GH-NtOLmGjgHaEK?rs=1&pid=ImgDetMain"),
               height: 250,
               width: double.infinity,
               fit: BoxFit.fill,
