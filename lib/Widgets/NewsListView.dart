@@ -22,11 +22,15 @@ class _NewsListViewState extends State<NewsListView> {
     super.initState();
     //to call the method once
     getGeneralNewS(); //delete await because it dont do any thing after it
+    //make the method throw refactor + extract method
+    // because we should wait it to finish and init dont allow await
   }
 
   // do only ctrl + alt + M to refactor method
   Future<void> getGeneralNewS() async {
     articles = await NewsServices(dio: Dio()).getGeneralNews();
+    //to rebuild ui after doing method
+    setState(() {});
   }
 
 //second build UI
@@ -34,7 +38,7 @@ class _NewsListViewState extends State<NewsListView> {
     return SliverList(
         delegate: SliverChildBuilderDelegate(
             childCount: articles.length,
-            (context, index) => NewsWidget(
+            (context, index) => articles==Null?CircularProgressIndicator():NewsWidget(
                   article: articles[index],
                 )));
   }
