@@ -14,6 +14,7 @@ class NewsListView extends StatefulWidget {
 // Scope contain initial State and build ui
 class _NewsListViewState extends State<NewsListView> {
   List<ArticleModel> articles = [];
+  bool isLoading = true;
   @override
   //first state and call once only
   //initState dont allow to put async
@@ -29,17 +30,23 @@ class _NewsListViewState extends State<NewsListView> {
   // do only ctrl + alt + M to refactor method
   Future<void> getGeneralNewS() async {
     articles = await NewsServices(dio: Dio()).getGeneralNews();
+    isLoading = false;
     //to rebuild ui after doing method
     setState(() {});
   }
 
 //second build UI
   Widget build(BuildContext context) {
-    return SliverList(
-        delegate: SliverChildBuilderDelegate(
-            childCount: articles.length,
-            (context, index) => articles==Null?CircularProgressIndicator():NewsWidget(
-                  article: articles[index],
-                )));
+    return isLoading
+        ? SliverFillRemaining(
+      //to center widget in customScrolView
+            hasScrollBody: false,
+            child: Center(child: CircularProgressIndicator()))
+        : SliverList(
+            delegate: SliverChildBuilderDelegate(
+                childCount: articles.length,
+                (context, index) => NewsWidget(
+                      article: articles[index],
+                    )));
   }
 }
